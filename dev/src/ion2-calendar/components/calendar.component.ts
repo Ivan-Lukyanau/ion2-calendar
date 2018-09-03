@@ -281,7 +281,8 @@ export class CalendarComponent implements ControlValueAccessor, OnInit {
   }
 
   _monthFormat(date: number): string {
-    return moment(date).format(this._d.monthFormat.replace(/y/g, 'Y'))
+    const monthName = moment(date).format(this._d.monthFormat.replace(/y/g, 'Y'));
+    return monthName.charAt(0).toUpperCase() + monthName.slice(1);
   }
 
   private initOpt(): void {

@@ -276,7 +276,8 @@ export class CalendarModal implements OnInit {
   }
 
   _monthFormat(date: any): string {
-    return moment(date).format(this._d.monthFormat.replace(/y/g, 'Y'))
+    const monthName = moment(date).format(this._d.monthFormat.replace(/y/g, 'Y'));
+    return monthName.charAt(0).toUpperCase() + monthName.slice(1);
   }
 
   trackByIndex(index: number, moment: CalendarMonth): number {
